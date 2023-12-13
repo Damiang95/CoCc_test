@@ -57,14 +57,16 @@ jobs:
         run: docker-compose up -d
 
       - name: Check Docker containers
-        run: docker ps
+        run: docker ps -a
 
-      - name: Show Environment Variables
-        run: env
+
       
       - name: Wait for Deployment
         run: sleep 10s  # Adjust the duration based on your app's startup time
-
+     
+      - name: Verification
+        run: curl http://localhost:8080
+      
       - name: Show Deployment URL
         run: |
           # Replace 'your-app-name' and 'your-port' with the actual values
