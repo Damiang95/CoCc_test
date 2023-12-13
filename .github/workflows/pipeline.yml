@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Angular app Docker image
-        run: docker build -t test2 .
+        run: docker build -t damqng95/test2:test1 .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image to Docker Hub
-        run: docker push test2
+        run: docker push damqng95/test2:test1
   deploy:
     runs-on: ubuntu-latest
 
