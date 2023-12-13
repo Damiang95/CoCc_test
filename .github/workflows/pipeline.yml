@@ -58,7 +58,10 @@ jobs:
 
       - name: Check Docker containers
         run: docker ps
-        
+
+      - name: Show Environment Variables
+        run: env
+      
       - name: Wait for Deployment
         run: sleep 10s  # Adjust the duration based on your app's startup time
 
